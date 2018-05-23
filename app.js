@@ -33,7 +33,7 @@ app.use(function(req, res, next) {
 
 // configure mongoDB - database
 mongoose.Promise = global.Promise;
-mongoose.connect(config.DB).then(
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/test").then(
     () => {console.log('Banco de dados conectado com sucesso!') },
     err => { console.log('Não foi possivel conectar com o banco, erro: '+ err)}
 );
