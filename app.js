@@ -24,7 +24,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(cors({origin: 'https://testetecnicoangular.herokuapp.com'}));
+var whitelist = ['http://localhost:4200', 'https://testetecnicoangular.herokuapp.com']
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+app.use(cors(corsOptions));
 
 app.use('/contacts', contactRoutes);
 app.use('/user', userRoutes);
