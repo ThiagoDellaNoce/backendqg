@@ -7,7 +7,7 @@ const authConfig = require('../config/auth');
 
 const userRoutes = express.Router();
 
-const User = require('../models/user');
+const User = require('../models/User');
 
 // Função auxiliar para criação de token
 function generateToken(params = {}) { 
