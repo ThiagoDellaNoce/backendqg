@@ -9,6 +9,8 @@ var mongoose = require('mongoose');
 const config = require('./config/db');
 
 var contactRoutes = require('./routes/contactRoutes');
+var userRoutes = require('./routes/userRoutes');
+var projectRoutes = require('./routes/projectRoutes');
 
 var app = express();
 
@@ -25,6 +27,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors({origin: 'https://testetecnicoangular.herokuapp.com'}));
 
 app.use('/contacts', contactRoutes);
+app.use('/user', userRoutes);
+app.use('/project', projectRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -33,11 +37,10 @@ app.use(function(req, res, next) {
 
 // configure mongoDB - database
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/test").then(
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/angularcrud").then(
     () => {console.log('Banco de dados conectado com sucesso!') },
     err => { console.log('Não foi possivel conectar com o banco, erro: '+ err)}
 );
-
 
 // error handler
 app.use(function(err, req, res, next) {
