@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(cors({origin: 'https://www.testetecnicoangular.herokuapp.com'}));
+app.use(cors({origin: 'https://testetecnicoangular.herokuapp.com'}));
 
 app.use('/contacts', contactRoutes);
 app.use('/user', userRoutes);
