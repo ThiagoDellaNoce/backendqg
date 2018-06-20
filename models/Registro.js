@@ -11,9 +11,6 @@ var Registro = new Schema({
   },
   consumidos: {
     type: String
-  },
-  pago: {
-    type: boolean
   }
 },{
     collection: 'registros'

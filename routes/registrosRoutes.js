@@ -67,7 +67,7 @@ registrosRoutes.route('/update/:id').post(function (req, res)
             })
             .catch(err => 
             {
-                res.status(400).send("não foi possível atualizar a comanda");
+                res.status(400).send("não foi possível atualizar o registro");
             });
         }
   });
