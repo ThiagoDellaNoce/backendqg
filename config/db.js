@@ -1,3 +1,3 @@
 module.exports = {
-    DB: 'mongodb://heroku_6cnpww8w:cuj7rthrqga4ojqfebo6ond2oa@ds133570.mlab.com:33570/heroku_6cnpww8w/angularcrud'
- };
+    DB: 'mongodb://heroku_73hp1th2:tnj3bsot7h0ov94ckim1tod1jg@ds163410.mlab.com:63410/heroku_73hp1th2/qgsmoke'
+};

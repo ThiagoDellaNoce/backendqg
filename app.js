@@ -8,9 +8,9 @@ var cors = require('cors');
 var mongoose = require('mongoose');
 const config = require('./config/db');
 
-var contactRoutes = require('./routes/contactRoutes');
 var userRoutes = require('./routes/userRoutes');
 var projectRoutes = require('./routes/projectRoutes');
+var comandaRoutes = require('./routes/comandaRoutes');
 
 var app = express();
 
@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-var whitelist = ['http://localhost:4200', 'https://testetecnicoangular.herokuapp.com']
+var whitelist = ['http://localhost:4200', 'https://frontendqg.herokuapp.com']
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
@@ -36,9 +36,9 @@ var corsOptions = {
 }
 app.use(cors(corsOptions));
 
-app.use('/contacts', contactRoutes);
 app.use('/user', userRoutes);
 app.use('/project', projectRoutes);
+app.use('/comanda', comandaRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -47,7 +47,7 @@ app.use(function(req, res, next) {
 
 // configure mongoDB - database
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/angularcrud").then(
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/qgsmoke").then(
     () => {console.log('Banco de dados conectado com sucesso!') },
     err => { console.log('Não foi possivel conectar com o banco, erro: '+ err)}
 );

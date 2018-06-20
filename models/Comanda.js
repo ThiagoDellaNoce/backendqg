@@ -2,21 +2,18 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 // Define um schema e uma collection para contatos
-var Contact = new Schema({
+var Comanda = new Schema({
   name: {
     type: String
   },
-  email: {
+  mesa: {
     type: String
   },
-  phone: {
-    type: String
-  },
-  dateBorn: {
+  consumidos: {
     type: String
   }
 },{
-    collection: 'contacts'
+    collection: 'comandas'
 });
 
-module.exports = mongoose.model('Contact', Contact);
+module.exports = mongoose.model('Comanda', Comanda);

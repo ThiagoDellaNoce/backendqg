@@ -23,7 +23,7 @@ userRoutes.route('/register').post(async function(req, res)
 
     try {
         if (await User.findOne({ email })) {
-            return res.status(400).send({ error: 'User ja existe' });
+            return res.status(400).send({ error: 'Usuário já existe' });
         }
 
         const user = await User.create(req.body);
