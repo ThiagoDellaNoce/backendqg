@@ -59,7 +59,7 @@ comandaRoutes.route('/update/:id').post(function (req, res)
         {
             comanda.name = req.body.name;
             comanda.mesa = req.body.mesa;
-            comanda.consumivel = req.body.consumivel;
+            comanda.consumidos = req.body.consumidos;
 
             comanda.save().then(comanda => 
             {
