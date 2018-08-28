@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-var whitelist = ['http://localhost:4200', 'https://frontendqg.herokuapp.com', 'http://frontendqg.herokuapp.com', 'http://comandas.qgsmokeclub.com']
+var whitelist = ['http://localhost:4200', 'https://frontendqg.herokuapp.com', 'http://frontendqg.herokuapp.com', 'http://comandas.qgsmokeclub.com', 'https://comandas.qgsmokeclub.com']
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
