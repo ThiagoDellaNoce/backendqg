@@ -12,7 +12,7 @@ var userRoutes = require('./routes/userRoutes');
 var projectRoutes = require('./routes/projectRoutes');
 var comandaRoutes = require('./routes/comandaRoutes');
 var registrosRoutes = require('./routes/registrosRoutes');
-var abertasRoutes = require('./routes/abertasRoutes');
+var abertasRoutes = require('./routes/abertaRoutes');
 
 var app = express();
 
