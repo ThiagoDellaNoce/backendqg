@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 // Define um schema e uma collection para contatos
-var Aberta = new Schema({
+var Arquivada = new Schema({
   name: {
     type: String
   },
@@ -13,7 +13,7 @@ var Aberta = new Schema({
     type: String
   }
 },{
-    collection: 'abertas'
+    collection: 'arquivadas'
 });
 
-module.exports = mongoose.model('Aberta', Aberta);
+module.exports = mongoose.model('Arquivada', Arquivada);

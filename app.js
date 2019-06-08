@@ -12,7 +12,7 @@ var userRoutes = require('./routes/userRoutes');
 var projectRoutes = require('./routes/projectRoutes');
 var comandaRoutes = require('./routes/comandaRoutes');
 var registrosRoutes = require('./routes/registrosRoutes');
-var abertasRoutes = require('./routes/abertaRoutes');
+var arquivadasRoutes = require('./routes/arquivadaRoutes');
 
 var app = express();
 
@@ -42,7 +42,7 @@ app.use('/user', userRoutes);
 app.use('/project', projectRoutes);
 app.use('/comanda', comandaRoutes);
 app.use('/registro', registrosRoutes);
-app.use('/abertas', abertasRoutes);
+app.use('/arquivada', arquivadasRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
