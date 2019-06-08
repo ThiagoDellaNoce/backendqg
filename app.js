@@ -42,7 +42,7 @@ app.use('/user', userRoutes);
 app.use('/project', projectRoutes);
 app.use('/comanda', comandaRoutes);
 app.use('/registro', registrosRoutes);
-app.use('/abertas', registrosRoutes);
+app.use('/abertas', abertasRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
