@@ -12,6 +12,7 @@ var userRoutes = require('./routes/userRoutes');
 var projectRoutes = require('./routes/projectRoutes');
 var comandaRoutes = require('./routes/comandaRoutes');
 var registrosRoutes = require('./routes/registrosRoutes');
+var abertasRoutes = require('./routes/abertasRoutes');
 
 var app = express();
 
@@ -41,6 +42,7 @@ app.use('/user', userRoutes);
 app.use('/project', projectRoutes);
 app.use('/comanda', comandaRoutes);
 app.use('/registro', registrosRoutes);
+app.use('/abertas', registrosRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -50,7 +52,7 @@ app.use(function(req, res, next) {
 // configure mongoDB - database
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/qgsmoke").then(
-    () => {console.log('Banco de dados conectado com sucesso!') },
+    () => { console.log('Banco de dados conectado com sucesso!') },
     err => { console.log('Não foi possivel conectar com o banco, erro: '+ err)}
 );
 

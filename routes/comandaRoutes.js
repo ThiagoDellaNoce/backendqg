@@ -36,7 +36,7 @@ comandaRoutes.route('/').get(function (req, res)
     });
 });
 
-// Edit
+// Edit -GET
 comandaRoutes.route('/edit/:id').get(function (req, res) 
 {
     var id = req.params.id;
